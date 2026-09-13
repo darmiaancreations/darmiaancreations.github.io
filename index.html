@@ -1,1 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Sanjeeda Khanam & Sanjay Sahani | Artists</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family: Georgia, "Times New Roman", serif;
+    background:#f7f3eb;
+    color:#29251f;
+}
+
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(247,243,235,.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid #ddd4c5;
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:22px;
+    letter-spacing:3px;
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#29251f;
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    letter-spacing:1.5px;
+}
+
+.nav-links a:hover{
+    color:#96704c;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:120px 25px 80px;
+
+    background:
+    linear-gradient(rgba(30,25,20,.48),rgba(30,25,20,.48)),
+    url("https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=2000&q=80")
+    center/cover;
+}
+
+.hero-content{
+    color:white;
+    max-width:900px;
+}
+
+.hero-small{
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    letter-spacing:5px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:clamp(45px,7vw,90px);
+    font-weight:normal;
+    line-height:1.05;
+}
+
+.hero-subtitle{
+    margin-top:30px;
+    font-size:18px;
+    letter-spacing:4px;
+}
+
+.hero-button{
+    display:inline-block;
+    margin-top:40px;
+    padding:14px 30px;
+    border:1px solid white;
+    color:white;
+    text-decoration:none;
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    letter-spacing:2px;
+}
+
+.hero-button:hover{
+    background:white;
+    color:#29251f;
+}
+
+/* GENERAL */
+
+section{
+    padding:110px 25px;
+}
+
+.container{
+    max-width:1150px;
+    margin:auto;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:65px;
+}
+
+.section-heading span{
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    letter-spacing:4px;
+    color:#96704c;
+}
+
+.section-heading h2{
+    font-size:48px;
+    font-weight:normal;
+    margin-top:12px;
+}
+
+.section-heading p{
+    max-width:650px;
+    margin:20px auto 0;
+    color:#71695f;
+    font-size:17px;
+}
+
+/* ABOUT */
+
+.about{
+    background:#ebe4d7;
+}
+
+.about-content{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+}
+
+.about-content p{
+    font-size:19px;
+    line-height:1.9;
+    color:#514b43;
+}
+
+/* ARTISTS */
+
+.artist-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:45px;
+}
+
+.artist-card{
+    background:#fffdf8;
+    border:1px solid #ded5c7;
+    overflow:hidden;
+    transition:.4s;
+}
+
+.artist-card:hover{
+    transform:translateY(-7px);
+}
+
+.artist-photo{
+    height:500px;
+    overflow:hidden;
+}
+
+.artist-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.artist-card:hover img{
+    transform:scale(1.04);
+}
+
+.artist-info{
+    padding:32px;
+}
+
+.artist-info span{
+    font-family:Arial,sans-serif;
+    color:#96704c;
+    font-size:11px;
+    letter-spacing:3px;
+}
+
+.artist-info h3{
+    font-size:32px;
+    font-weight:normal;
+    margin:10px 0 15px;
+}
+
+.artist-info p{
+    color:#686157;
+    line-height:1.7;
+    font-size:16px;
+}
+
+/* GALLERY */
+
+.gallery{
+    background:#f0ebe2;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.artwork{
+    position:relative;
+    height:390px;
+    overflow:hidden;
+    background:#d8d1c5;
+}
+
+.artwork img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.artwork:hover img{
+    transform:scale(1.06);
+}
+
+.artwork-overlay{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    padding:60px 22px 22px;
+    color:white;
+    background:linear-gradient(transparent,rgba(0,0,0,.85));
+}
+
+.artwork-overlay h3{
+    font-size:21px;
+    font-weight:normal;
+}
+
+.artwork-overlay p{
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    margin-top:5px;
+}
+
+/* EXHIBITIONS */
+
+.timeline{
+    max-width:850px;
+    margin:auto;
+}
+
+.timeline-item{
+    display:grid;
+    grid-template-columns:150px 1fr;
+    gap:35px;
+    padding:30px 0;
+    border-top:1px solid #d5ccbe;
+}
+
+.timeline-year{
+    font-family:Arial,sans-serif;
+    color:#96704c;
+    letter-spacing:2px;
+}
+
+.timeline-content h3{
+    font-size:24px;
+    font-weight:normal;
+    margin-bottom:8px;
+}
+
+.timeline-content p{
+    color:#6d665d;
+    line-height:1.7;
+}
+
+/* CONTACT */
+
+.contact{
+    background:#29251f;
+    color:#f7f3eb;
+    text-align:center;
+}
+
+.contact .section-heading span{
+    color:#c9a47b;
+}
+
+.contact .section-heading p{
+    color:#c8c0b4;
+}
+
+.contact-details{
+    margin-top:35px;
+    color:#d8d0c5;
+    line-height:2;
+}
+
+.contact-button{
+    display:inline-block;
+    margin-top:30px;
+    padding:15px 35px;
+    border:1px solid #c9b9a6;
+    color:white;
+    text-decoration:none;
+    font-family:Arial,sans-serif;
+    letter-spacing:2px;
+    font-size:12px;
+}
+
+.contact-button:hover{
+    background:#f7f3eb;
+    color:#29251f;
+}
+
+/* FOOTER */
+
+footer{
+    background:#191713;
+    color:#aaa39a;
+    text-align:center;
+    padding:25px;
+    font-family:Arial,sans-serif;
+    font-size:12px;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    .nav-container{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .nav-links{
+        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .artist-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
+
+    .artist-photo{
+        height:420px;
+    }
+
+    .timeline-item{
+        grid-template-columns:1fr;
+        gap:8px;
+    }
+
+    section{
+        padding:80px 20px;
+    }
+
+    .section-heading h2{
+        font-size:38px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+<div class="nav-container">
+
+<div class="logo">
+KHANAM × SAHANI
+</div>
+
+<div class="nav-links">
+<a href="#home">HOME</a>
+<a href="#about">ABOUT</a>
+<a href="#artists">ARTISTS</a>
+<a href="#gallery">GALLERY</a>
+<a href="#exhibitions">EXHIBITIONS</a>
+<a href="#contact">CONTACT</a>
+</div>
+
+</div>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<div class="hero-small">
+CONTEMPORARY INDIAN ART
+</div>
+
+<h1>
+Sanjeeda Khanam<br>
+&amp; Sanjay Sahani
+</h1>
+
+<div class="hero-subtitle">
+ART • COLOUR • EXPRESSION
+</div>
+
+<a href="#artists" class="hero-button">
+EXPLORE THE ARTISTS
+</a>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>THE JOURNEY</span>
+
+<h2>About the Artists</h2>
+
+</div>
+
+<div class="about-content">
+
+<p>
+Dr. Sanjeeda Khanam and Dr. Sanjay Kumar Sahani are
+contemporary Indian artists whose artistic practices explore
+colour, nature, culture, human experience and the visual
+richness of everyday life.
+</p>
+
+<br>
+
+<p>
+Their creative journeys encompass painting and mixed-media
+approaches, bringing together observation, imagination,
+memory and personal experience. Through their works, they
+continue to explore different possibilities of colour, form,
+texture and contemporary expression.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ARTISTS -->
+
+<section id="artists">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>THE ARTISTS</span>
+
+<h2>Meet the Artists</h2>
+
+<p>
+Discover the individual artistic journeys and creative
+languages of Sanjeeda Khanam and Sanjay Sahani.
+</p>
+
+</div>
+
+
+<div class="artist-grid">
+
+
+<!-- SANJEEDA -->
+
+<div class="artist-card">
+
+<div class="artist-photo">
+
+<img
+src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1000&q=80"
+alt="Sanjeeda Khanam">
+
+</div>
+
+<div class="artist-info">
+
+<span>ARTIST • PAINTER</span>
+
+<h3>Dr. Sanjeeda Khanam</h3>
+
+<p>
+Sanjeeda Khanam's artistic practice engages with colour,
+nature, movement and experiences gathered through life and
+travel. Her works explore acrylic and mixed-media approaches,
+creating compositions that combine atmosphere, visual
+rhythm and expressive colour.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- SANJAY -->
+
+<div class="artist-card">
+
+<div class="artist-photo">
+
+<img
+src="https://images.unsplash.com/photo-1561214115-f2f134cc4912?auto=format&fit=crop&w=1000&q=80"
+alt="Sanjay Sahani">
+
+</div>
+
+<div class="artist-info">
+
+<span>ARTIST • PAINTER</span>
+
+<h3>Dr. Sanjay Kumar Sahani</h3>
+
+<p>
+Sanjay Sahani works across painting and mixed-media,
+exploring nature, landscape, human figures and cultural
+experiences. His work reflects an ongoing interest in
+colour, texture, observation and contemporary visual
+expression.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section class="gallery" id="gallery">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>SELECTED WORKS</span>
+
+<h2>Artworks</h2>
+
+<p>
+A glimpse into the artistic world of Sanjeeda Khanam
+and Sanjay Sahani.
+</p>
+
+</div>
+
+
+<div class="gallery-grid">
+
+
+<div class="artwork">
+
+<img
+src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=1000&q=80"
+alt="Artwork">
+
+<div class="artwork-overlay">
+
+<h3>Abstract Expression</h3>
+
+<p>Sanjeeda Khanam</p>
+
+</div>
+
+</div>
+
+
+<div class="artwork">
+
+<img
+src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=1000&q=80"
+alt="Artwork">
+
+<div class="artwork-overlay">
+
+<h3>Colour &amp; Form</h3>
+
+<p>Sanjeeda Khanam</p>
+
+</div>
+
+</div>
+
+
+<div class="artwork">
+
+<img
+src="https://images.unsplash.com/photo-1577083552431-6e5fd01988d5?auto=format&fit=crop&w=1000&q=80"
+alt="Artwork">
+
+<div class="artwork-overlay">
+
+<h3>Nature &amp; Memory</h3>
+
+<p>Sanjay Sahani</p>
+
+</div>
+
+</div>
+
+
+<div class="artwork">
+
+<img
+src="https://images.unsplash.com/photo-1578301978018-3005759f48f7?auto=format&fit=crop&w=1000&q=80"
+alt="Artwork">
+
+<div class="artwork-overlay">
+
+<h3>Contemporary Landscape</h3>
+
+<p>Sanjay Sahani</p>
+
+</div>
+
+</div>
+
+
+<div class="artwork">
+
+<img
+src="https://images.unsplash.com/photo-1577083288073-40892c0860a4?auto=format&fit=crop&w=1000&q=80"
+alt="Artwork">
+
+<div class="artwork-overlay">
+
+<h3>Visual Journey</h3>
+
+<p>Sanjeeda Khanam</p>
+
+</div>
+
+</div>
+
+
+<div class="artwork">
+
+<img
+src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=1000&q=80"
+alt="Artwork">
+
+<div class="artwork-overlay">
+
+<h3>Expression</h3>
+
+<p>Sanjay Sahani</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- EXHIBITIONS -->
+
+<section id="exhibitions">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>EXHIBITIONS</span>
+
+<h2>Artistic Journey</h2>
+
+<p>
+Selected moments from their journey through exhibitions
+and contemporary art platforms.
+</p>
+
+</div>
+
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<div class="timeline-year">
+EXHIBITION
+</div>
+
+<div class="timeline-content">
+
+<h3>Pravah — Jaipur</h3>
+
+<p>
+A joint presentation of works by Sanjeeda Khanam and
+Sanjay Kumar Sahani at Jawahar Kala Kendra, Jaipur.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="timeline-item">
+
+<div class="timeline-year">
+EXHIBITIONS
+</div>
+
+<div class="timeline-content">
+
+<h3>National &amp; International Platforms</h3>
+
+<p>
+Participation in exhibitions, workshops and art-related
+platforms reflecting their continued engagement with
+contemporary Indian art.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="timeline-item">
+
+<div class="timeline-year">
+ONGOING
+</div>
+
+<div class="timeline-content">
+
+<h3>Continuing the Creative Journey</h3>
+
+<p>
+Continuing exploration of painting, mixed media, colour,
+nature, culture and human experience.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>GET IN TOUCH</span>
+
+<h2>Connect With the Artists</h2>
+
+<p>
+For exhibitions, artwork enquiries, collaborations
+and professional opportunities.
+</p>
+
+</div>
+
+<div class="contact-details">
+
+<p>Email: YOUR-EMAIL-HERE</p>
+
+<p>Location: India</p>
+
+</div>
+
+<a
+href="mailto:YOUR-EMAIL-HERE"
+class="contact-button">
+
+CONTACT
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+© 2026 Sanjeeda Khanam &amp; Sanjay Sahani
+<br><br>
+All Rights Reserved
+
+</footer>
+
+
+</body>
+</html>
