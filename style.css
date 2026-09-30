@@ -1,0 +1,689 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f4efe7;
+  color: #29231f;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.navbar {
+  height: 85px;
+  background: rgba(244, 239, 231, 0.97);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(50, 40, 30, 0.1);
+}
+
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.logo span {
+  font-style: italic;
+  margin: 0 5px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 27px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #29231f;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  transition: 0.3s;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background: #29231f;
+  left: 0;
+  bottom: -7px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.hero {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(20,15,10,.35), rgba(20,15,10,.55)),
+    url("images/hero.jpg") center/cover;
+  display: flex;
+  align-items: center;
+  padding: 120px 8%;
+  color: white;
+}
+
+.hero-content {
+  max-width: 700px;
+  animation: fadeUp 1.2s ease;
+}
+
+.small-title {
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(60px, 8vw, 110px);
+  line-height: .9;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.hero p:not(.small-title) {
+  max-width: 450px;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+.main-button,
+.dark-button,
+.buy-button {
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1.5px;
+  font-size: 11px;
+  transition: .3s;
+}
+
+.main-button {
+  padding: 17px 30px;
+  background: white;
+  color: #29231f;
+}
+
+.main-button:hover {
+  transform: translateY(-4px);
+  background: #29231f;
+  color: white;
+}
+
+.intro {
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+  padding: 130px 25px;
+}
+
+.intro h2,
+.about-text h2,
+.artist-info h2,
+.contact-info h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 65px;
+  line-height: .95;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.intro > p:not(.small-title) {
+  line-height: 1.9;
+  color: #675d55;
+  margin-bottom: 25px;
+}
+
+.text-link {
+  color: #29231f;
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 2px;
+  border-bottom: 1px solid #29231f;
+  padding-bottom: 5px;
+}
+
+.home-artists {
+  padding: 0 8% 130px;
+}
+
+.artist-preview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+  margin-bottom: 130px;
+}
+
+.artist-preview.reverse .artist-image {
+  order: 2;
+}
+
+.artist-image {
+  height: 600px;
+  overflow: hidden;
+}
+
+.artist-image img {
+  height: 100%;
+  transition: .8s;
+}
+
+.artist-image:hover img {
+  transform: scale(1.05);
+}
+
+.artist-preview h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 60px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.artist-preview p:not(.small-title) {
+  color: #675d55;
+  line-height: 1.9;
+  margin-bottom: 30px;
+}
+
+.page-hero {
+  height: 55vh;
+  margin-top: 85px;
+  background: #d8cbbb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.page-hero p {
+  font-size: 11px;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+
+.page-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 90px;
+  font-weight: 500;
+}
+
+.about-section {
+  padding: 130px 8%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+  align-items: center;
+}
+
+.about-image {
+  height: 650px;
+  overflow: hidden;
+}
+
+.about-image img {
+  height: 100%;
+}
+
+.about-text p:not(.small-title) {
+  color: #675d55;
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+.artist-detail {
+  padding: 130px 8%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+  align-items: center;
+}
+
+.artist-large-image {
+  height: 650px;
+  overflow: hidden;
+}
+
+.artist-large-image img {
+  height: 100%;
+  transition: .7s;
+}
+
+.artist-large-image:hover img {
+  transform: scale(1.04);
+}
+
+.artist-info p:not(.small-title) {
+  color: #675d55;
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+.artist-detail.second {
+  background: #e5ddd2;
+}
+
+.gallery-section {
+  padding: 120px 6%;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-item img {
+  height: 450px;
+  transition: .7s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+.gallery-caption {
+  background: rgba(35, 29, 24, .85);
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 18px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+}
+
+.shop-section {
+  padding: 120px 8%;
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px 30px;
+}
+
+.shop-card {
+  background: #e8dfd3;
+  transition: .4s;
+}
+
+.shop-card:hover {
+  transform: translateY(-8px);
+}
+
+.shop-card img {
+  height: 550px;
+}
+
+.shop-content {
+  padding: 30px;
+}
+
+.shop-content h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.shop-content p:not(.small-title) {
+  color: #675d55;
+  margin-bottom: 25px;
+}
+
+.buy-button {
+  padding: 14px 24px;
+  background: #29231f;
+  color: white;
+}
+
+.buy-button:hover {
+  background: #6d5c4c;
+  transform: translateY(-3px);
+}
+
+.exhibition-section {
+  padding: 120px 8%;
+}
+
+.exhibition {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 50px;
+  padding: 50px 0;
+  border-bottom: 1px solid #c8bbae;
+}
+
+.exhibition-date {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 50px;
+}
+
+.exhibition h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.exhibition p:not(.small-title) {
+  color: #675d55;
+  line-height: 1.8;
+}
+
+.location {
+  margin-top: 20px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.contact-section {
+  padding: 130px 8%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+}
+
+.contact-info > p:not(.small-title) {
+  color: #675d55;
+  line-height: 1.9;
+  max-width: 500px;
+}
+
+.contact-details {
+  margin-top: 45px;
+}
+
+.contact-details p {
+  margin-bottom: 25px;
+  line-height: 1.7;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.modal-box input,
+.modal-box textarea {
+  border: none;
+  border-bottom: 1px solid #aaa;
+  background: transparent;
+  padding: 15px 5px;
+  outline: none;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.contact-form textarea {
+  height: 150px;
+  resize: none;
+}
+
+.dark-button {
+  background: #29231f;
+  color: white;
+  padding: 17px 30px;
+  align-self: flex-start;
+}
+
+.dark-button:hover {
+  background: #6d5c4c;
+  transform: translateY(-3px);
+}
+
+footer {
+  background: #29231f;
+  color: white;
+  padding: 55px 8%;
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+footer p {
+  font-size: 11px;
+  color: #c8bbae;
+}
+
+/* MODAL */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.65);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.modal-box {
+  background: #f4efe7;
+  width: 500px;
+  max-width: 100%;
+  padding: 45px;
+  position: relative;
+  animation: popup .4s ease;
+}
+
+.modal-box h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 50px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.modal-box > p:not(.small-title) {
+  color: #675d55;
+  margin-bottom: 25px;
+}
+
+.modal-box input,
+.modal-box textarea {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.modal-box textarea {
+  height: 100px;
+  resize: none;
+}
+
+.close-button {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popup {
+  from {
+    opacity: 0;
+    transform: scale(.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+
+  .navbar {
+    height: auto;
+    padding: 18px 5%;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .hero {
+    padding-top: 180px;
+  }
+
+  .hero h1 {
+    font-size: 65px;
+  }
+
+  .page-hero {
+    margin-top: 125px;
+    height: 40vh;
+  }
+
+  .page-hero h1 {
+    font-size: 65px;
+  }
+
+  .artist-preview,
+  .about-section,
+  .artist-detail,
+  .contact-section {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .artist-preview.reverse .artist-image {
+    order: 0;
+  }
+
+  .artist-image,
+  .about-image,
+  .artist-large-image {
+    height: 500px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .shop-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .intro h2,
+  .about-text h2,
+  .artist-info h2,
+  .contact-info h2 {
+    font-size: 55px;
+  }
+}
+
+@media (max-width: 550px) {
+
+  .logo {
+    font-size: 21px;
+  }
+
+  .nav-links a {
+    font-size: 9px;
+  }
+
+  .hero h1 {
+    font-size: 50px;
+  }
+
+  .page-hero h1 {
+    font-size: 50px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item img {
+    height: 450px;
+  }
+
+  .artist-image,
+  .about-image,
+  .artist-large-image {
+    height: 400px;
+  }
+
+  .exhibition {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .exhibition h2 {
+    font-size: 38px;
+  }
+
+  .modal-box {
+    padding: 30px 25px;
+  }
+}
