@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop | Khanam & Sahani</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">KHANAM <span>&</span> SAHANI</div>
+
+    <div class="nav-links">
+      <a href="index.html">HOME</a>
+      <a href="about.html">ABOUT US</a>
+      <a href="artists.html">ARTISTS</a>
+      <a href="gallery.html">GALLERY</a>
+      <a href="shop.html" class="active">SHOP</a>
+      <a href="exhibitions.html">EXHIBITIONS</a>
+      <a href="contact.html">CONTACT</a>
+    </div>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <p>AVAILABLE ARTWORKS</p>
+  <h1>Shop</h1>
+</section>
+
+<section class="shop-section">
+
+  <div class="shop-grid">
+
+    <div class="shop-card">
+      <img src="images/art1.jpg" alt="Artwork 1">
+
+      <div class="shop-content">
+        <p class="small-title">ORIGINAL ARTWORK</p>
+        <h2>Artwork I</h2>
+        <p>Price available on enquiry.</p>
+
+        <button class="buy-button" onclick="openBuy('Artwork I')">
+          BUY ARTWORK
+        </button>
+      </div>
+    </div>
+
+    <div class="shop-card">
+      <img src="images/art2.jpg" alt="Artwork 2">
+
+      <div class="shop-content">
+        <p class="small-title">ORIGINAL ARTWORK</p>
+        <h2>Artwork II</h2>
+        <p>Price available on enquiry.</p>
+
+        <button class="buy-button" onclick="openBuy('Artwork II')">
+          BUY ARTWORK
+        </button>
+      </div>
+    </div>
+
+    <div class="shop-card">
+      <img src="images/art3.jpg" alt="Artwork 3">
+
+      <div class="shop-content">
+        <p class="small-title">ORIGINAL ARTWORK</p>
+        <h2>Artwork III</h2>
+        <p>Price available on enquiry.</p>
+
+        <button class="buy-button" onclick="openBuy('Artwork III')">
+          BUY ARTWORK
+        </button>
+      </div>
+    </div>
+
+    <div class="shop-card">
+      <img src="images/art4.jpg" alt="Artwork 4">
+
+      <div class="shop-content">
+        <p class="small-title">ORIGINAL ARTWORK</p>
+        <h2>Artwork IV</h2>
+        <p>Price available on enquiry.</p>
+
+        <button class="buy-button" onclick="openBuy('Artwork IV')">
+          BUY ARTWORK
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<div id="buyModal" class="modal">
+
+  <div class="modal-box">
+
+    <button class="close-button" onclick="closeBuy()">×</button>
+
+    <p class="small-title">PURCHASE ENQUIRY</p>
+
+    <h2>Buy Artwork</h2>
+
+    <p id="selectedArtwork"></p>
+
+    <input type="text" id="buyerName" placeholder="Your Name">
+
+    <input type="email" id="buyerEmail" placeholder="Your Email">
+
+    <textarea id="buyerMessage" placeholder="Message"></textarea>
+
+    <button class="dark-button" onclick="sendEnquiry()">
+      SEND ENQUIRY
+    </button>
+
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">KHANAM & SAHANI</div>
+  <p>© 2026 Sanjeeda Khanam & Sanjay Sahani</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
