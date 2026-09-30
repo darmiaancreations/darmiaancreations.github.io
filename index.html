@@ -18,12 +18,12 @@ html{
 }
 
 body{
-    font-family: Georgia, "Times New Roman", serif;
+    font-family:Georgia,"Times New Roman",serif;
     background:#f7f3eb;
     color:#29251f;
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
 
 nav{
     position:fixed;
@@ -62,13 +62,14 @@ nav{
     font-family:Arial,sans-serif;
     font-size:13px;
     letter-spacing:1.5px;
+    transition:.3s;
 }
 
 .nav-links a:hover{
     color:#96704c;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
     min-height:100vh;
@@ -82,11 +83,14 @@ nav{
     linear-gradient(rgba(30,25,20,.48),rgba(30,25,20,.48)),
     url("https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=2000&q=80")
     center/cover;
+
+    animation:heroZoom 1.5s ease;
 }
 
 .hero-content{
     color:white;
     max-width:900px;
+    animation:fadeUp 1.2s ease;
 }
 
 .hero-small{
@@ -118,14 +122,16 @@ nav{
     font-family:Arial,sans-serif;
     font-size:12px;
     letter-spacing:2px;
+    transition:.4s;
 }
 
 .hero-button:hover{
     background:white;
     color:#29251f;
+    transform:translateY(-4px);
 }
 
-/* GENERAL */
+/* ================= GENERAL ================= */
 
 section{
     padding:110px 25px;
@@ -161,7 +167,7 @@ section{
     font-size:17px;
 }
 
-/* ABOUT */
+/* ================= ABOUT ================= */
 
 .about{
     background:#ebe4d7;
@@ -179,7 +185,7 @@ section{
     color:#514b43;
 }
 
-/* ARTISTS */
+/* ================= ARTISTS ================= */
 
 .artist-grid{
     display:grid;
@@ -191,11 +197,13 @@ section{
     background:#fffdf8;
     border:1px solid #ded5c7;
     overflow:hidden;
-    transition:.4s;
+    transition:.5s;
+    animation:fadeUp 1s ease;
 }
 
 .artist-card:hover{
-    transform:translateY(-7px);
+    transform:translateY(-10px);
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
 }
 
 .artist-photo{
@@ -207,11 +215,11 @@ section{
     width:100%;
     height:100%;
     object-fit:cover;
-    transition:.6s;
+    transition:.7s;
 }
 
 .artist-card:hover img{
-    transform:scale(1.04);
+    transform:scale(1.06);
 }
 
 .artist-info{
@@ -237,7 +245,7 @@ section{
     font-size:16px;
 }
 
-/* GALLERY */
+/* ================= GALLERY ================= */
 
 .gallery{
     background:#f0ebe2;
@@ -251,20 +259,26 @@ section{
 
 .artwork{
     position:relative;
-    height:390px;
+    height:430px;
     overflow:hidden;
     background:#d8d1c5;
+    transition:.5s;
+}
+
+.artwork:hover{
+    transform:translateY(-7px);
+    box-shadow:0 18px 35px rgba(0,0,0,.15);
 }
 
 .artwork img{
     width:100%;
     height:100%;
     object-fit:cover;
-    transition:.6s;
+    transition:.7s;
 }
 
 .artwork:hover img{
-    transform:scale(1.06);
+    transform:scale(1.08);
 }
 
 .artwork-overlay{
@@ -274,7 +288,7 @@ section{
     width:100%;
     padding:60px 22px 22px;
     color:white;
-    background:linear-gradient(transparent,rgba(0,0,0,.85));
+    background:linear-gradient(transparent,rgba(0,0,0,.88));
 }
 
 .artwork-overlay h3{
@@ -288,7 +302,103 @@ section{
     margin-top:5px;
 }
 
-/* EXHIBITIONS */
+/* ================= BUY BUTTON ================= */
+
+.buy-button{
+    display:inline-block;
+    margin-top:15px;
+    padding:11px 20px;
+    border:1px solid white;
+    background:transparent;
+    color:white;
+    font-family:Arial,sans-serif;
+    font-size:11px;
+    letter-spacing:2px;
+    cursor:pointer;
+    transition:.35s;
+}
+
+.buy-button:hover{
+    background:white;
+    color:#29251f;
+    transform:translateY(-3px);
+}
+
+/* ================= POPUP ================= */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:2000;
+    background:rgba(0,0,0,.72);
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal-box{
+    width:100%;
+    max-width:500px;
+    background:#fffdf8;
+    padding:40px;
+    position:relative;
+    animation:popup .35s ease;
+}
+
+.modal-box h2{
+    font-size:32px;
+    font-weight:normal;
+    margin-bottom:10px;
+}
+
+.modal-box p{
+    color:#686157;
+    margin-bottom:25px;
+    line-height:1.6;
+}
+
+.close{
+    position:absolute;
+    right:20px;
+    top:15px;
+    font-size:28px;
+    cursor:pointer;
+    color:#555;
+}
+
+.modal-box input,
+.modal-box textarea{
+    width:100%;
+    padding:13px;
+    margin-bottom:15px;
+    border:1px solid #d8d0c5;
+    background:#f7f3eb;
+    font-family:Arial,sans-serif;
+    outline:none;
+}
+
+.modal-box textarea{
+    height:100px;
+    resize:none;
+}
+
+.submit-button{
+    width:100%;
+    padding:14px;
+    border:none;
+    background:#29251f;
+    color:white;
+    cursor:pointer;
+    letter-spacing:2px;
+    transition:.3s;
+}
+
+.submit-button:hover{
+    background:#96704c;
+}
+
+/* ================= EXHIBITIONS ================= */
 
 .timeline{
     max-width:850px;
@@ -320,7 +430,7 @@ section{
     line-height:1.7;
 }
 
-/* CONTACT */
+/* ================= CONTACT ================= */
 
 .contact{
     background:#29251f;
@@ -352,6 +462,7 @@ section{
     font-family:Arial,sans-serif;
     letter-spacing:2px;
     font-size:12px;
+    transition:.3s;
 }
 
 .contact-button:hover{
@@ -359,7 +470,7 @@ section{
     color:#29251f;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
     background:#191713;
@@ -370,7 +481,43 @@ footer{
     font-size:12px;
 }
 
-/* MOBILE */
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(35px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes popup{
+    from{
+        opacity:0;
+        transform:scale(.85);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes heroZoom{
+    from{
+        transform:scale(1.04);
+    }
+
+    to{
+        transform:scale(1);
+    }
+}
+
+/* ================= MOBILE ================= */
 
 @media(max-width:800px){
 
@@ -419,7 +566,7 @@ footer{
 
 <body>
 
-<!-- NAVIGATION -->
+<!-- ================= NAVIGATION ================= -->
 
 <nav>
 <div class="nav-container">
@@ -441,7 +588,7 @@ KHANAM × SAHANI
 </nav>
 
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 
 <section class="hero" id="home">
 
@@ -453,7 +600,7 @@ CONTEMPORARY INDIAN ART
 
 <h1>
 Sanjeeda Khanam<br>
-&amp; Sanjay Sahani
+& Sanjay Sahani
 </h1>
 
 <div class="hero-subtitle">
@@ -469,7 +616,7 @@ EXPLORE THE ARTISTS
 </section>
 
 
-<!-- ABOUT -->
+<!-- ================= ABOUT ================= -->
 
 <section class="about" id="about">
 
@@ -509,7 +656,7 @@ texture and contemporary expression.
 </section>
 
 
-<!-- ARTISTS -->
+<!-- ================= ARTISTS ================= -->
 
 <section id="artists">
 
@@ -593,7 +740,6 @@ expression.
 
 </div>
 
-
 </div>
 
 </div>
@@ -601,7 +747,7 @@ expression.
 </section>
 
 
-<!-- GALLERY -->
+<!-- ================= GALLERY ================= -->
 
 <section class="gallery" id="gallery">
 
@@ -624,11 +770,13 @@ and Sanjay Sahani.
 <div class="gallery-grid">
 
 
+<!-- ARTWORK 1 -->
+
 <div class="artwork">
 
 <img
 src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=1000&q=80"
-alt="Artwork">
+alt="Abstract Expression">
 
 <div class="artwork-overlay">
 
@@ -636,50 +784,74 @@ alt="Artwork">
 
 <p>Sanjeeda Khanam</p>
 
-</div>
+<button
+class="buy-button"
+onclick="openBuy('Abstract Expression')">
+BUY ARTWORK
+</button>
 
 </div>
 
+</div>
+
+
+<!-- ARTWORK 2 -->
 
 <div class="artwork">
 
 <img
 src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=1000&q=80"
-alt="Artwork">
+alt="Colour and Form">
 
 <div class="artwork-overlay">
 
-<h3>Colour &amp; Form</h3>
+<h3>Colour & Form</h3>
 
 <p>Sanjeeda Khanam</p>
 
-</div>
+<button
+class="buy-button"
+onclick="openBuy('Colour & Form')">
+BUY ARTWORK
+</button>
 
 </div>
 
+</div>
+
+
+<!-- ARTWORK 3 -->
 
 <div class="artwork">
 
 <img
 src="https://images.unsplash.com/photo-1577083552431-6e5fd01988d5?auto=format&fit=crop&w=1000&q=80"
-alt="Artwork">
+alt="Nature and Memory">
 
 <div class="artwork-overlay">
 
-<h3>Nature &amp; Memory</h3>
+<h3>Nature & Memory</h3>
 
 <p>Sanjay Sahani</p>
 
-</div>
+<button
+class="buy-button"
+onclick="openBuy('Nature & Memory')">
+BUY ARTWORK
+</button>
 
 </div>
 
+</div>
+
+
+<!-- ARTWORK 4 -->
 
 <div class="artwork">
 
 <img
 src="https://images.unsplash.com/photo-1578301978018-3005759f48f7?auto=format&fit=crop&w=1000&q=80"
-alt="Artwork">
+alt="Contemporary Landscape">
 
 <div class="artwork-overlay">
 
@@ -687,16 +859,24 @@ alt="Artwork">
 
 <p>Sanjay Sahani</p>
 
-</div>
+<button
+class="buy-button"
+onclick="openBuy('Contemporary Landscape')">
+BUY ARTWORK
+</button>
 
 </div>
 
+</div>
+
+
+<!-- ARTWORK 5 -->
 
 <div class="artwork">
 
 <img
 src="https://images.unsplash.com/photo-1577083288073-40892c0860a4?auto=format&fit=crop&w=1000&q=80"
-alt="Artwork">
+alt="Visual Journey">
 
 <div class="artwork-overlay">
 
@@ -704,22 +884,36 @@ alt="Artwork">
 
 <p>Sanjeeda Khanam</p>
 
-</div>
+<button
+class="buy-button"
+onclick="openBuy('Visual Journey')">
+BUY ARTWORK
+</button>
 
 </div>
 
+</div>
+
+
+<!-- ARTWORK 6 -->
 
 <div class="artwork">
 
 <img
 src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=1000&q=80"
-alt="Artwork">
+alt="Expression">
 
 <div class="artwork-overlay">
 
 <h3>Expression</h3>
 
 <p>Sanjay Sahani</p>
+
+<button
+class="buy-button"
+onclick="openBuy('Expression')">
+BUY ARTWORK
+</button>
 
 </div>
 
@@ -733,7 +927,7 @@ alt="Artwork">
 </section>
 
 
-<!-- EXHIBITIONS -->
+<!-- ================= EXHIBITIONS ================= -->
 
 <section id="exhibitions">
 
@@ -783,7 +977,7 @@ EXHIBITIONS
 
 <div class="timeline-content">
 
-<h3>National &amp; International Platforms</h3>
+<h3>National & International Platforms</h3>
 
 <p>
 Participation in exhibitions, workshops and art-related
@@ -822,7 +1016,7 @@ nature, culture and human experience.
 </section>
 
 
-<!-- CONTACT -->
+<!-- ================= CONTACT ================= -->
 
 <section class="contact" id="contact">
 
@@ -862,16 +1056,134 @@ CONTACT
 </section>
 
 
-<!-- FOOTER -->
+<!-- ================= BUY POPUP ================= -->
+
+<div class="modal" id="buyModal">
+
+<div class="modal-box">
+
+<span class="close" onclick="closeBuy()">&times;</span>
+
+<h2>Purchase Artwork</h2>
+
+<p id="selectedArtwork">
+Artwork selected
+</p>
+
+<input
+type="text"
+id="buyerName"
+placeholder="Your Name">
+
+<input
+type="email"
+id="buyerEmail"
+placeholder="Your Email">
+
+<textarea
+id="buyerMessage"
+placeholder="Your message or enquiry..."></textarea>
+
+<button
+class="submit-button"
+onclick="sendEnquiry()">
+
+SEND PURCHASE ENQUIRY
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-© 2026 Sanjeeda Khanam &amp; Sanjay Sahani
+© 2026 Sanjeeda Khanam & Sanjay Sahani
+
 <br><br>
+
 All Rights Reserved
 
 </footer>
 
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+function openBuy(artworkName){
+
+    document.getElementById("buyModal").style.display = "flex";
+
+    document.getElementById("selectedArtwork").innerText =
+    "You are enquiring about: " + artworkName;
+
+}
+
+function closeBuy(){
+
+    document.getElementById("buyModal").style.display = "none";
+
+}
+
+function sendEnquiry(){
+
+    const name =
+    document.getElementById("buyerName").value;
+
+    const email =
+    document.getElementById("buyerEmail").value;
+
+    const message =
+    document.getElementById("buyerMessage").value;
+
+    const artwork =
+    document.getElementById("selectedArtwork").innerText;
+
+    if(name === "" || email === ""){
+
+        alert("Please enter your name and email.");
+
+        return;
+
+    }
+
+    const subject =
+    encodeURIComponent("Artwork Purchase Enquiry");
+
+    const body =
+    encodeURIComponent(
+        artwork +
+        "\n\nName: " + name +
+        "\nEmail: " + email +
+        "\n\nMessage: " + message
+    );
+
+    window.location.href =
+    "mailto:YOUR-EMAIL-HERE?subject=" +
+    subject +
+    "&body=" +
+    body;
+
+}
+
+window.onclick = function(event){
+
+    const modal =
+    document.getElementById("buyModal");
+
+    if(event.target === modal){
+
+        closeBuy();
+
+    }
+
+}
+
+</script>
 
 </body>
 </html>
