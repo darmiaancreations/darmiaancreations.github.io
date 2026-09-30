@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Khanam & Sahani</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">KHANAM <span>&</span> SAHANI</div>
+
+    <div class="nav-links">
+      <a href="index.html">HOME</a>
+      <a href="about.html">ABOUT US</a>
+      <a href="artists.html">ARTISTS</a>
+      <a href="gallery.html">GALLERY</a>
+      <a href="shop.html">SHOP</a>
+      <a href="exhibitions.html">EXHIBITIONS</a>
+      <a href="contact.html" class="active">CONTACT</a>
+    </div>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <p>GET IN TOUCH</p>
+  <h1>Contact</h1>
+</section>
+
+<section class="contact-section">
+
+  <div class="contact-info">
+
+    <p class="small-title">CONTACT US</p>
+
+    <h2>Let's Talk<br>About Art.</h2>
+
+    <p>
+      For artwork enquiries, exhibitions, collaborations or purchases,
+      get in touch with us.
+    </p>
+
+    <div class="contact-details">
+      <p><strong>Email</strong><br>YOUR-EMAIL-HERE</p>
+
+      <p><strong>Location</strong><br>India</p>
+    </div>
+
+  </div>
+
+  <form class="contact-form"
+        onsubmit="sendContact(event)">
+
+    <input type="text" id="contactName"
+           placeholder="Your Name" required>
+
+    <input type="email" id="contactEmail"
+           placeholder="Your Email" required>
+
+    <input type="text" id="contactSubject"
+           placeholder="Subject">
+
+    <textarea id="contactMessage"
+              placeholder="Your Message"
+              required></textarea>
+
+    <button class="dark-button" type="submit">
+      SEND MESSAGE
+    </button>
+
+  </form>
+
+</section>
+
+<footer>
+  <div class="footer-logo">KHANAM & SAHANI</div>
+  <p>© 2026 Sanjeeda Khanam & Sanjay Sahani</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
