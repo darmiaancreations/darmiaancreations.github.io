@@ -43,5 +43,90 @@
         <h2>Artwork I</h2>
         <p>Price available on enquiry.</p>
 
-        <button class="buy-button" onclick="openBuy('Artwo
+        <button class="buy-button" onclick="openBuy('Artwork I')">
+          BUY ARTWORK
+        </button>
+      </div>
+    </div>
+
+    <div class="shop-card">
+      <img src="images/art2.jpg" alt="Artwork 2">
+
+      <div class="shop-content">
+        <p class="small-title">ORIGINAL ARTWORK</p>
+        <h2>Artwork II</h2>
+        <p>Price available on enquiry.</p>
+
+        <button class="buy-button" onclick="openBuy('Artwork II')">
+          BUY ARTWORK
+        </button>
+      </div>
+    </div>
+
+    <div class="shop-card">
+      <img src="images/art3.jpg" alt="Artwork 3">
+
+      <div class="shop-content">
+        <p class="small-title">ORIGINAL ARTWORK</p>
+        <h2>Artwork III</h2>
+        <p>Price available on enquiry.</p>
+
+        <button class="buy-button" onclick="openBuy('Artwork III')">
+          BUY ARTWORK
+        </button>
+      </div>
+    </div>
+
+    <div class="shop-card">
+      <img src="images/art4.jpg" alt="Artwork 4">
+
+      <div class="shop-content">
+        <p class="small-title">ORIGINAL ARTWORK</p>
+        <h2>Artwork IV</h2>
+        <p>Price available on enquiry.</p>
+
+        <button class="buy-button" onclick="openBuy('Artwork IV')">
+          BUY ARTWORK
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<div id="buyModal" class="modal">
+
+  <div class="modal-box">
+
+    <button class="close-button" onclick="closeBuy()">×</button>
+
+    <p class="small-title">PURCHASE ENQUIRY</p>
+
+    <h2>Buy Artwork</h2>
+
+    <p id="selectedArtwork"></p>
+
+    <input type="text" id="buyerName" placeholder="Your Name">
+
+    <input type="email" id="buyerEmail" placeholder="Your Email">
+
+    <textarea id="buyerMessage" placeholder="Message"></textarea>
+
+    <button class="dark-button" onclick="sendEnquiry()">
+      SEND ENQUIRY
+    </button>
+
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">DARMIAAN CREATIONS</div>
+  <p>© 2026 Darmiaan Creations</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
 ```
